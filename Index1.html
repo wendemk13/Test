@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff9a3d, #ff6b6b);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .recipe-image {
+            height: 200px;
+            background-color: #ff9a3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .recipe-content {
+            padding: 1.5rem;
+        }
+        
+        .recipe-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .recipe-description {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: #333;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delicious Recipes</h1>
+        <p>Discover amazing dishes from around the world</p>
+    </header>
+    
+    <div class="container">
+        <h2>Featured Recipes</h2>
+        
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <div class="recipe-image">Pasta Carbonara</div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Pasta Carbonara</h3>
+                    <div class="recipe-meta">
+                        <span>⏱ 25 min</span>
+                        <span>🍽 4 servings</span>
+                    </div>
+                    <p class="recipe-description">Creamy Italian pasta dish with eggs, cheese, pancetta, and pepper.</p>
+                    <a href="#" class="btn">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-image">Vegetable Stir Fry</div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Vegetable Stir Fry</h3>
+                    <div class="recipe-meta">
+                        <span>⏱ 20 min</span>
+                        <span>🍽 2 servings</span>
+                    </div>
+                    <p class="recipe-description">Colorful vegetables sautéed in a savory sauce, perfect for a quick meal.</p>
+                    <a href="#" class="btn">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-image">Chocolate Cake</div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Chocolate Cake</h3>
+                    <div class="recipe-meta">
+                        <span>⏱ 60 min</span>
+                        <span>🍽 8 servings</span>
+                    </div>
+                    <p class="recipe-description">Rich, moist chocolate cake with creamy frosting - a classic dessert.</p>
+                    <a href="#" class="btn">View Recipe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Delicious Recipes. A Git branching practice project.</p>
+    </footer>
+    
+    <script>
+        // Simple JavaScript for interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            
+            recipeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.querySelector('.recipe-title').textContent;
+                    alert(`You selected: ${title}\n\nThis would show the full recipe in a real application.`);
+                });
+            });
+            
+            console.log('Recipe page loaded successfully!');
+        });
+    </script>
+</body>
+</html>
